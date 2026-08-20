@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಕಲಿಕಾ ಸೇತು — Kalika Setu | Aasha Infinite Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;600;700;800&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#1B2A4A;
+    --indigo-deep:#12203A;
+    --marigold:#F2A93B;
+    --marigold-deep:#D98E1E;
+    --teal:#2F7A6F;
+    --paper:#FFFBF2;
+    --paper-card:#FFFFFF;
+    --ink:#20263A;
+    --ink-soft:#5B6272;
+    --line:#E7E1D2;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .kn{font-family:'Baloo Tamma 2','Noto Sans Kannada',sans-serif;}
+  .en{font-family:'Inter',sans-serif;}
+
+  /* ===== Header ===== */
+  header.hero{
+    background:linear-gradient(160deg,var(--indigo) 0%, var(--indigo-deep) 100%);
+    color:#fff;
+    padding:56px 24px 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-60px; top:-60px;
+    width:260px; height:260px; border-radius:50%;
+    background:radial-gradient(circle, rgba(242,169,59,0.28) 0%, rgba(242,169,59,0) 70%);
+  }
+  .hero-inner{max-width:920px; margin:0 auto; position:relative; z-index:1;}
+  .org-tag{
+    display:inline-block; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--marigold); font-weight:600; margin-bottom:14px; font-family:'Inter',sans-serif;
+  }
+  .hero-title-kn{
+    font-family:'Baloo Tamma 2',sans-serif; font-weight:800; font-size:44px; line-height:1.15; margin:0 0 6px;
+  }
+  .hero-title-en{
+    font-family:'Inter',sans-serif; font-weight:600; font-size:19px; color:#D9DEEB; margin:0 0 22px;
+  }
+  .hero-desc-kn{font-family:'Baloo Tamma 2',sans-serif; font-size:19px; line-height:1.7; max-width:640px; color:#EDEFF6; margin:0 0 4px;}
+  .hero-desc-en{font-size:14.5px; line-height:1.7; max-width:640px; color:#B9C0D4; margin:0;}
+
+  /* ===== Nav pills ===== */
+  nav.jump{
+    max-width:920px; margin:-34px auto 40px; padding:0 24px;
+    position:relative; z-index:2;
+  }
+  .jump-scroll{
+    display:flex; gap:10px; overflow-x:auto; padding:10px 12px;
+    background:var(--paper-card); border-radius:16px;
+    box-shadow:0 8px 24px rgba(18,32,58,0.12);
+    scrollbar-width:none;
+  }
+  .jump-scroll::-webkit-scrollbar{display:none;}
+  .jump-pill{
+    flex:0 0 auto; white-space:nowrap;
+    padding:9px 16px; border-radius:999px; font-size:14px; font-weight:600;
+    text-decoration:none; color:var(--indigo); background:#F1EEE3;
+    font-family:'Baloo Tamma 2',sans-serif;
+    border:1px solid transparent;
+  }
+  .jump-pill:hover{background:var(--marigold); color:var(--indigo-deep); border-color:var(--marigold-deep);}
+
+  /* ===== Section ===== */
+  main{max-width:920px; margin:0 auto; padding:0 24px 80px;}
+  section.skill{margin-bottom:56px; scroll-margin-top:20px;}
+  .skill-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:6px;}
+  .skill-icon{
+    flex:0 0 auto; width:46px; height:46px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; color:#fff;
+  }
+  .skill-title-kn{font-family:'Baloo Tamma 2',sans-serif; font-weight:700; font-size:26px; margin:0; color:var(--indigo);}
+  .skill-title-en{font-size:14px; font-weight:600; color:var(--ink-soft); margin:2px 0 0; letter-spacing:.01em;}
+  .skill-why{
+    font-family:'Baloo Tamma 2',sans-serif; font-size:15.5px; color:var(--ink-soft);
+    margin:14px 0 20px; padding-left:60px; line-height:1.6;
+  }
+
+  /* ===== Resource cards ===== */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-left:60px;}
+  @media(max-width:640px){ .grid{grid-template-columns:1fr; padding-left:0;} .skill-why{padding-left:0;} }
+
+  .card{
+    background:var(--paper-card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 16px 14px; display:flex; flex-direction:column; gap:10px;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .card:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(27,42,74,0.1); border-color:#D8CFAF;}
+  .card-top{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .lang-chip{
+    font-size:11.5px; font-weight:700; padding:3px 10px; border-radius:999px;
+    font-family:'Baloo Tamma 2',sans-serif;
+  }
+  .lang-kn{background:#FDECC8; color:#8A5A00;}
+  .lang-hi{background:#E4EFEA; color:#1E5C4C;}
+  .lang-en{background:#E7ECF6; color:#2C3E70;}
+  .card-title{font-size:15px; font-weight:600; line-height:1.4; margin:0; color:var(--ink);}
+  .card-source{font-size:12.5px; color:var(--ink-soft); margin:0;}
+  .card-link{
+    margin-top:auto; display:inline-flex; align-items:center; gap:8px;
+    text-decoration:none; font-family:'Baloo Tamma 2',sans-serif; font-weight:600; font-size:14.5px;
+    color:var(--indigo-deep); padding-top:6px; border-top:1px dashed var(--line);
+  }
+  .card-link:hover{color:var(--marigold-deep);}
+  .flame{width:18px; height:18px; flex:0 0 auto;}
+
+  /* colors per skill */
+  .c-tally .skill-icon{background:#B8452F;}
+  .c-excel .skill-icon{background:var(--teal);}
+  .c-fin .skill-icon{background:#5B4B8A;}
+  .c-gst .skill-icon{background:var(--marigold-deep);}
+  .c-digital .skill-icon{background:#2A5C99;}
+
+  footer{
+    background:var(--indigo-deep); color:#C9CEDE; text-align:center;
+    padding:34px 24px; font-size:13px; line-height:1.8;
+  }
+  footer strong{color:#fff;}
+  footer a{color:var(--marigold);}
+  .foot-kn{font-family:'Baloo Tamma 2',sans-serif; font-size:15px; color:#EDEFF6; margin-bottom:6px;}
+
+  .note{
+    font-size:13px; color:var(--ink-soft); background:#F1EEE3; border-radius:10px;
+    padding:10px 14px; margin-top:6px; margin-left:60px;
+  }
+  @media(max-width:640px){ .note{margin-left:0;} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="org-tag">Aasha Infinite Foundation</span>
+    <h1 class="hero-title-kn">ಕಲಿಕಾ ಸೇತು</h1>
+    <p class="hero-title-en">Kalika Setu — The Learning Bridge</p>
+    <p class="hero-desc-kn">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ, ಉಚಿತ ವೀಡಿಯೊಗಳ ಮೂಲಕ ಕಲಿಯಿರಿ. ಟ್ಯಾಲಿ, ಎಕ್ಸೆಲ್, ಹಣಕಾಸು ಹೇಳಿಕೆಗಳು, GST ಮತ್ತು ಡಿಜಿಟಲ್ ಕೌಶಲ್ಯಗಳು — ಎಲ್ಲವೂ ಒಂದೇ ಕಡೆ.</p>
+    <p class="hero-desc-en">Click and learn through free videos. Tally, Excel, financial statements, GST, and digital skills — all in one place, in Kannada and English.</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="jump-scroll">
+    <a class="jump-pill" href="#tally">ಟ್ಯಾಲಿ · Tally</a>
+    <a class="jump-pill" href="#excel">ಎಕ್ಸೆಲ್ · Excel</a>
+    <a class="jump-pill" href="#fin">ಹಣಕಾಸು · Financial</a>
+    <a class="jump-pill" href="#gst">GST</a>
+    <a class="jump-pill" href="#digital">ಡಿಜಿಟಲ್ · Digital</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- TALLY -->
+  <section class="skill c-tally" id="tally">
+    <div class="skill-head">
+      <div class="skill-icon">📒</div>
+      <div>
+        <h2 class="skill-title-kn">ಟ್ಯಾಲಿ ಪ್ರೈಮ್ ಮೂಲಭೂತ ಅಂಶಗಳು</h2>
+        <p class="skill-title-en">Tally Prime Basics</p>
+      </div>
+    </div>
+    <p class="skill-why">ಪ್ರತಿ ಅಕೌಂಟ್ಸ್ ಕೆಲಸಕ್ಕೂ ಟ್ಯಾಲಿ ಬೇಕೇಬೇಕು — ಕಂಪನಿ ಸೃಷ್ಟಿಸುವುದರಿಂದ ಹಿಡಿದು ವೋಚರ್ ಎಂಟ್ರಿವರೆಗೆ ಇಲ್ಲಿ ಕಲಿಯಿರಿ.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">Tally Prime Complete Tutorial — Full Course (step-by-step playlist)</p>
+        <p class="card-source">CSR Center · YouTube Playlist</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLwll4nv2c5TEPkS_458ml3tg2Jxxhii_j">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">#26 Company Creation in Tally Prime — step by step</p>
+        <p class="card-source">CSR Center · YouTube</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=87sMhHoW2pg">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-hi">ಹಿಂದಿ · Hindi</span></div>
+        <p class="card-title">Tally Prime for Beginners — Full Course</p>
+        <p class="card-source">YouTube · Beginner-friendly, works even without Hindi fluency (visual demo-heavy)</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=fHFOEnI8QaQ">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-hi">ಹಿಂದಿ · Hindi</span></div>
+        <p class="card-title">Tally Prime with GST — Basic to Advance (playlist with PDF notes)</p>
+        <p class="card-source">YouTube Playlist</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLHq_wPEVVWy0fMz0m9ZPjQ3eQ8av4Jywk">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+    </div>
+    <p class="note">📌 ಟ್ರೈನರ್ ಸೂಚನೆ: ಮೊದಲು ಕಂಪನಿ ಸೃಷ್ಟಿ ಮತ್ತು ಲೆಡ್ಜರ್ ಗ್ರೂಪಿಂಗ್ ಕಲಿಸಿ, ನಂತರ ವೋಚರ್ ಎಂಟ್ರಿ. (Trainer note: teach company creation & ledger grouping before voucher entry.)</p>
+  </section>
+
+  <!-- EXCEL -->
+  <section class="skill c-excel" id="excel">
+    <div class="skill-head">
+      <div class="skill-icon">📊</div>
+      <div>
+        <h2 class="skill-title-kn">ಎಕ್ಸೆಲ್ ಮತ್ತು ಡೇಟಾ ನಿರ್ವಹಣೆ</h2>
+        <p class="skill-title-en">Excel & Data Handling</p>
+      </div>
+    </div>
+    <p class="skill-why">ಸಂಖ್ಯೆಗಳನ್ನು ಜೋಡಿಸುವುದು, ಲೆಕ್ಕಹಾಕುವುದು, ಮತ್ತು ಒಪ್ಪಿಗೆಯಾಗುವಂತೆ ತೋರಿಸುವುದು — ಎಲ್ಲಾ ಆಫೀಸ್ ಕೆಲಸಗಳಿಗೂ ಬೇಕಾಗುವ ಕೌಶಲ್ಯ.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">MS Excel Full Course — Part 1: Basics for Beginners</p>
+        <p class="card-source">YouTube · Starts from zero</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=h7oYFpg1oQM">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">Learn MS Excel in 20 Minutes — Quick Beginner Guide</p>
+        <p class="card-source">YouTube · Short, good for a first look</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dei4k9NsQXo">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">MS Excel Basic to Advanced in 65 Minutes</p>
+        <p class="card-source">YouTube · Covers formulas & formatting together</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=F1ONz8EeL5I">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-hi">ಹಿಂದಿ · Hindi</span></div>
+        <p class="card-title">Complete Microsoft Excel Tutorial — Basic to Advance</p>
+        <p class="card-source">YouTube · Long-form, thorough</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OX-iyb-21tk">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+    </div>
+    <p class="note">📌 ಟ್ರೈನರ್ ಸೂಚನೆ: SUM, AVERAGE ಮತ್ತು ಸಾರ್ಟ್/ಫಿಲ್ಟರ್ ಮೊದಲು, ಪಿವೋಟ್ ಟೇಬಲ್ ನಂತರ. (Trainer note: cover SUM/AVERAGE and sort/filter before pivot tables.)</p>
+  </section>
+
+  <!-- FINANCIAL STATEMENTS -->
+  <section class="skill c-fin" id="fin">
+    <div class="skill-head">
+      <div class="skill-icon">📈</div>
+      <div>
+        <h2 class="skill-title-kn">ಹಣಕಾಸು ಹೇಳಿಕೆಗಳ ಓದುವಿಕೆ</h2>
+        <p class="skill-title-en">Reading Financial Statements</p>
+      </div>
+    </div>
+    <p class="skill-why">P&amp;L ಮತ್ತು ಬ್ಯಾಲೆನ್ಸ್ ಶೀಟ್ ಓದಲು ಗೊತ್ತಿದ್ದರೆ, ಯಾವುದೇ ಅಕೌಂಟ್ಸ್ ಇಂಟರ್ವ್ಯೂನಲ್ಲಿ ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಮಾತನಾಡಬಹುದು.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">Trading, Profit &amp; Loss Account and Balance Sheet (Kannada, with English subtitles)</p>
+        <p class="card-source">YouTube · Class XI level, simple explanation</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OtP1Bn-QPQ8">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">Understanding the Balance Sheet — Explained in Kannada</p>
+        <p class="card-source">YouTube</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=gMPlvoO72Ak">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-en">English</span></div>
+        <p class="card-title">Financial Statements: All the Basics in 8 Minutes</p>
+        <p class="card-source">YouTube · Very short, good first watch</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Fi1wkUczuyk">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-en">English</span></div>
+        <p class="card-title">Financial Statements in 14 Minutes — A Beginner's Guide</p>
+        <p class="card-source">YouTube · Covers all 3 statements together</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Yx-qIKRIcqo">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+    </div>
+    <p class="note">📌 ಟ್ರೈನರ್ ಸೂಚನೆ: ಇದು ಸಿದ್ಧಪಡಿಸುವುದಲ್ಲ — ಓದಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಮಾತ್ರ. (Trainer note: goal is reading comprehension, not preparation, at this stage.)</p>
+  </section>
+
+  <!-- GST -->
+  <section class="skill c-gst" id="gst">
+    <div class="skill-head">
+      <div class="skill-icon">🧾</div>
+      <div>
+        <h2 class="skill-title-kn">GST ಮೂಲಭೂತ ಅಂಶಗಳು</h2>
+        <p class="skill-title-en">GST Basics</p>
+      </div>
+    </div>
+    <p class="skill-why">ಪ್ರತಿ ಬಿಲ್‌ನಲ್ಲೂ GST ಇರುತ್ತದೆ — ಇದು ಏನೆಂದು ಗೊತ್ತಿದ್ದರೆ ಯಾವುದೇ ಅಕೌಂಟ್ಸ್ ಇಂಟರ್ವ್ಯೂನಲ್ಲಿ ಎದುರಿಸಬಹುದು.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">What is GST — Types of GST (SGST, CGST, IGST, UTGST) Explained</p>
+        <p class="card-source">Belaku TV · YouTube</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=MdGhT8TJ9Ko">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-en">English</span></div>
+        <p class="card-title">GST Fundamentals Full Course — What is GST?</p>
+        <p class="card-source">YouTube · Broader, more detailed course</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZS4dThqfRbs">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-hi">ಹಿಂದಿ · Hindi</span></div>
+        <p class="card-title">Free GST Complete Course for Beginners</p>
+        <p class="card-source">YouTube · Covers registration & filing basics</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://m.youtube.com/watch?v=4l7e1xCdUsk">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+    </div>
+    <p class="note">📌 ಟ್ರೈನರ್ ಸೂಚನೆ: ಈ ಹಂತದಲ್ಲಿ ಅರಿವು ಮಾತ್ರ ಸಾಕು — GSTR ಫೈಲಿಂಗ್ ಕಲಿಸುವ ಅಗತ್ಯವಿಲ್ಲ. (Trainer note: awareness level only — actual GSTR filing is not required at this stage.)</p>
+  </section>
+
+  <!-- DIGITAL -->
+  <section class="skill c-digital" id="digital">
+    <div class="skill-head">
+      <div class="skill-icon">💻</div>
+      <div>
+        <h2 class="skill-title-kn">ಡಿಜಿಟಲ್ ಮತ್ತು ಫೈಲ್ ನಿರ್ವಹಣೆ</h2>
+        <p class="skill-title-en">Digital & File Management</p>
+      </div>
+    </div>
+    <p class="skill-why">ಫೈಲ್‌ಗಳನ್ನು ಸರಿಯಾಗಿ ಉಳಿಸುವುದು, ಹೆಸರಿಡುವುದು, ಮತ್ತು Google Drive ಬಳಸುವುದು — ಇದು ಆಫೀಸಿನ ಮೊದಲ ದಿನದಿಂದಲೇ ಬೇಕಾಗುತ್ತದೆ.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-kn">ಕನ್ನಡ</span></div>
+        <p class="card-title">Computer Basics — Full Playlist in Kannada</p>
+        <p class="card-source">YouTube Playlist</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLNFHigq37F2OMw8PkqYa9mdzqmyxG4pAj">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-en">English</span></div>
+        <p class="card-title">How to Use Google Drive — Beginners Tutorial</p>
+        <p class="card-source">YouTube · Under 1 hour, covers upload/organize/share</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=jSiORQ8PBg8">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="lang-chip lang-en">English</span></div>
+        <p class="card-title">Computer Skills Course: File Management, Part 1</p>
+        <p class="card-source">YouTube · Folders, filenames, file types explained simply</p>
+        <a class="card-link" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=k-EID5_2D9U">
+          <svg class="flame" viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1-1-2-1-2 1 4-1 5-1 5 1-2-1-4-1-4 0 2-2 3-2 3 1-3-1-4-1-9z" fill="#F2A93B"/><rect x="6" y="20" width="12" height="2" rx="1" fill="#8A5A00"/></svg>
+          ಕಲಿಯಿರಿ · Watch
+        </a>
+      </div>
+
+    </div>
+    <p class="note">📌 ಟ್ರೈನರ್ ಸೂಚನೆ: ಫೈಲ್ ಹೆಸರಿಡುವ ಅಭ್ಯಾಸವನ್ನು ಮೊದಲ ದಿನವೇ ಕಲಿಸಿ. (Trainer note: teach file-naming discipline from day one — it's a common, easily-fixed gap.)</p>
+  </section>
+
+</main>
+
+<footer>
+  <p class="foot-kn">ಆಶಾ ಇನ್ಫಿನಿಟ್ ಫೌಂಡೇಶನ್</p>
+  <p><strong>Aasha Infinite Foundation</strong> — curated free resource list for commerce graduates.<br>
+  Links point to external YouTube content and may change over time; please verify periodically.</p>
+</footer>
+
+</body>
+</html>
